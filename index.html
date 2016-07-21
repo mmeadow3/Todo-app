@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Angular Demo</title>
+    <link rel="stylesheet" type="text/css" href="lib/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+  </head>
+<body ng-app="TodoApp">
+  <div ng-include="'partials/navbar.html'">
+
+  </div>
+
+<div class="row">
+  <div class="col-xs-10 col-xs-offset-1 main-container">
+    <div class="col-xs-12" ng-view></div>
+  </div>
+</div>
+
+
+
+    <script src="lib/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="lib/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="lib/bower_components/angular/angular.min.js"></script>
+    <script src="lib/bower_components/angular-route/angular-route.min.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/factories/ItemFactory.js"></script>
+    <script src="app/controllers/ItemListCtrl.js"></script>
+    <script src="app/controllers/ItemNewCtrl.js"></script>
+    <script src="app/controllers/ItemViewCtrl.js"></script>
+    <script src="app/controllers/NavCtrl.js"></script>
+  </body>
+</html>

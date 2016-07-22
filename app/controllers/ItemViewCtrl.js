@@ -40,7 +40,7 @@ $scope.assignedTo = null;
     thingy = thingy.itemId;
     console.log(`${FirebaseUrl}/items/${thingy}`)
     return $q(function(resolve, reject) {
-      $http.put(`${FirebaseUrl}/items/${thingy}.json`, newTask)
+      $http.put(`${FirebaseUrl}/items/${thingy}.json`, newTask)  ///////dont use stringify with PUT
       .success(function() { ///////dont forget about .success
         resolve();
       })

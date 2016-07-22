@@ -32,8 +32,8 @@
               <input type="checkbox"/>
             </div>
             <div class="col-xs-7"> <a href="#/items/details/{{thingy.id}}">{{thingy.task}}</a></div>
-            <div class="col-xs-2"> {{thingy.dueDate}}</div>
-            <div class="col-xs-1"> {{thingy.assignedTo}}</div>
+            <div class="col-xs-2">Due: {{thingy.dueDate}}</div>
+            <div class="col-xs-1">Assigned to: {{thingy.assignedTo}}</div>
             <div class="col-xs-1"><button class="btn btn-danger" type="button" ng-click="deleteItem(thingy)">X</button></div>
           </div>
         </div>

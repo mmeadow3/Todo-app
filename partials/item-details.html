@@ -1,8 +1,19 @@
 <h1>Item Details</h1>
 
+
+<h1><h2>Task: {{selectedItem.task}}</h2></h1>
+<input type="text" name="name" ng-model="task" ng-show="edited" placeholder="enter text here">
 <h2>Assigned To: {{selectedItem.assignedTo}}</h2>
+<input type="text" name="name" ng-model="assignedTo" ng-show="edited" placeholder="enter text here">
 <h2>Due Date: {{selectedItem.dueDate}}</h2>
+<input type="text" name="name" ng-model="dueDate" ng-show="edited" placeholder="enter text here">
 <h2>Dependencies: {{selectedItem.dependencies}}</h2>
+<input type="text" name="name" ng-model="dependencies" ng-show="edited" placeholder="enter text here">
 <h2>Location: {{selectedItem.location}}</h2>
+<input type="text" name="name" ng-model="location" ng-show="edited" placeholder="enter text here">
 <h2>Urgency: {{selectedItem.urgency}}</h2>
+<input type="text" name="name" ng-model="urgency" ng-show="edited" placeholder="enter text here">
 <h2>Completed ?: {{(selectedItem.isCompleted ? "yes" : "no")}}</h2>
+<input type="text" name="name" ng-model="isCompleted" ng-show="edited" placeholder="enter text here">
+<button type="button" name="button" ng-click="edit(thingy)">Edit</button><br>
+<button type="button" name="button" ng-click="save(thingy)" ng-show="edited">Save</button>

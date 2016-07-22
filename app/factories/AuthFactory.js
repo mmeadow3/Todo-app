@@ -25,5 +25,5 @@ let isAuthenticated = function() {
 let getUser = function() {
   return currentUserId;
 };
-return {authWithProvider, isAuthenticated, getUser};
-});
+return {authWithProvider, isAuthenticated, getUser};  ////////returning these allows them to be accessed by other documents
+});  //////////AuthFactory.authWithProvider is used in Navbar.js

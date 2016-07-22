@@ -9,7 +9,7 @@ app.controller("LoginCtrl", function($scope, $location, AuthFactory){
   AuthFactory.authWithProvider()
     .then(function(result) {
       var user = result.user.uid;
-      console.log("logged in user fer sure", user);
+      console.log("logged in user for sure", user);
       // Load to dos?
       $location.path("/");
       $scope.$apply();

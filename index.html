@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Angular Demo</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles/main.css">
   </head>
 <body ng-app="TodoApp">
@@ -12,17 +12,11 @@
   <div ng-include="'partials/navbar.html'"> </div>
 <!--- This ng-include means it will always display ----------------->
 
-<nav>
-    <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">Logo</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a ng-href="#/items/list">All Items</a></li>
-        <li><a ng-href="#/items/new">New Item</a></li>
-        <li><a ng-href= "#/logout" ng-hide="!hasUser">Logout</a></li>
-        <li><a ng-href= "#/login" ng-hide="hasUser">Login</a></li>
-      </ul>
-    </div>
-  </nav>
+<div class="row">
+  <div class="col-xs-10 col-xs-offset-1 main-container">
+    <div class="col-xs-12" ng-view></div>
+  </div>
+</div>
 <!-- ng-view will allow some element to stay with the html as it changes -->
 
 
@@ -39,6 +33,5 @@
     <script src="app/controllers/ItemNewCtrl.js"></script>
     <script src="app/controllers/ItemViewCtrl.js"></script>
     <script src="app/controllers/NavCtrl.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
   </body>
 </html>

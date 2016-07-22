@@ -11,11 +11,13 @@ app.factory("ItemStorage", function(FirebaseUrl, $q, $http) {
     return $q(function(resolve, reject) {
       $http.get(`${FirebaseUrl}/items.json`)
       .success(function(itemObject) {
+        if (itemObject) {
         let itemCollection = itemObject;
         Object.keys(itemCollection).forEach(function(key) {
           itemCollection[key].id=key;
           items.push(itemCollection[key]);
         });
+      }
         resolve(items)
       })
       .error(function(error) {
@@ -36,6 +38,18 @@ app.factory("ItemStorage", function(FirebaseUrl, $q, $http) {
       });
     });
   };
+/////////////This will be the delete button
+let deleteItem = function(delItem) {
+  return $q(function(resolve, reject) {
+    $http.delete(`${FirebaseUrl}/items/${delItem.id}.json`)
+    .success(function() { ///////dont forget about .success
+      resolve();
+    })
+    .error(function(error) {
+      reject(error);
+    })
+  });
+};
 
-  return {getItemList, postNewItem};   //////////////both need to be returned at the end//////
+  return {getItemList, postNewItem, deleteItem};   //////////////both need to be returned at the end//////
 });

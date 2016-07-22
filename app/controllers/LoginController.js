@@ -3,9 +3,6 @@
 app.controller("LoginCtrl", function($scope, $location, AuthFactory){
 
 
-  //register function
-  // login function
-  // logout function
   AuthFactory.authWithProvider()
     .then(function(result) {
       var user = result.user.uid;

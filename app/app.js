@@ -1,5 +1,7 @@
 "use strict";
 
+
+////////We define app first bc it is used as the main controller /////////////////
 var app = angular.module("TodoApp", ['ngRoute'])///////ng-route is installed via bower
 .constant('FirebaseUrl', "https://todo-85c17.firebaseio.com/");
 
@@ -24,6 +26,10 @@ firebase.initializeApp(authConfig); ////////This is a predefined FB function
   when('/items/details/:itemId', {  ///////this is calling on the specific FB generated ID
     templateUrl: 'partials/item-details.html',
     controller: 'ItemViewCtrl'
+  }).
+  when('/items/register', {
+    templateUrl: 'partials/register.html',
+    controller: 'NavCtrl'  //////////dont add .js after controller 
   }).
   otherwise('/items/list');
 });

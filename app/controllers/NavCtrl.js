@@ -1,18 +1,7 @@
 "use strict";
 
 //////////this what populates the NavBar/////////////
-app.controller("NavCtrl", function ($scope, AuthFactory) {
-
-  // let provider = new firebase.auth.GoogleAuthProvider();
-  //
-  // function login (provider) {
-  //    firebase.auth().signInWithPopup(provider)
-  //   //  .then(function(y){
-  //   //    console.log(y)
-  //   //  })
-  // };
-
-
+app.controller("NavCtrl", function ($scope, AuthFactory) {  ////makes a call to AuthFactory.js
 
 
   $scope.navItems = [////////the urls are directing to different parts of the page
@@ -38,7 +27,7 @@ app.controller("NavCtrl", function ($scope, AuthFactory) {
   $scope.logout = function(){
     firebase.auth().signOut()
     .then(function(user){   ///////////Returning promises
-      console.log(user);
+      console.log(user);  //////will be undefined bc they have logged out
     })
   }
 });

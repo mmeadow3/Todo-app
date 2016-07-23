@@ -1,11 +1,10 @@
 "use strict";
 
 //////////////all of these start with app.controller///////////////////
-app.controller("ItemListCtrl", function($scope, ItemStorage){
-  function getItems(){ ItemStorage.getItemList()
+app.controller("ItemListCtrl", function($scope, ItemStorage){ //////ItemStorage.getItemList is defined in Item Factory
+  function getItems(){ ItemStorage.getItemList()  /////getItem() is now a function that reacts with the FB database
   .then(function(itemCollection){
-    // console.log('test', itemCollection);
-    $scope.items = itemCollection;
+    $scope.items = itemCollection;  /////now the items = the items from Firebase
   })
 }
 getItems();

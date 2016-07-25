@@ -14,20 +14,26 @@ app.controller("NavCtrl", function ($scope, AuthFactory) {  ////makes a call to 
     console.log($scope.email);
     firebase.auth().createUserWithEmailAndPassword($scope.email, $scope.password)
     .then( function(user){   ///////////Returning promises
-      // console.log(user)
       $scope.currentUser = user;
       console.log(user);
     })
   }
-  //////////This is refrencing AuthFactory and is capitalized bc that is what is defined in AuthFactory.js
-  $scope.login = AuthFactory.authWithProvider
-  /////////////This will login in with google////////////////
+//////////This is refrencing AuthFactory and is capitalized bc that is what is defined in AuthFactory.js
+  $scope.login = AuthFactory.authWithProvider  /////also is the ng-click event for html
+/////////////This will login in with google////////////////
+
+// $scope.login = (function(thingy){
+//   $scope.edited = true;
+// })    ////////why isnt this working????????
 
   /////////Logout function/////////////
   $scope.logout = function(){
     firebase.auth().signOut()
     .then(function(user){   ///////////Returning promises
       console.log(user);  //////will be undefined bc they have logged out
+    }).
+    then(function(){
+      $scope.loggedOut = true;  ///////working but now needs to to reappear when user signs in
     })
   }
 });

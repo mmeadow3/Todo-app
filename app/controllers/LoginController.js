@@ -4,7 +4,7 @@ app.controller("LoginCtrl", function($scope, $location, AuthFactory){
 
 
   AuthFactory.authWithProvider()
-    .then(function(result) {
+    .then(function(result) { /////start of then statement for promise
       var user = result.user.uid;
       console.log("logged in user for sure", user);
       // Load to dos?

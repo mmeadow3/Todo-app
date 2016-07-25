@@ -31,7 +31,7 @@ app.factory("ItemStorage", function(FirebaseUrl, $q, $http) {  //////this is whe
 ////////This is sending the data to FB////////////////
   let postNewItem = function(newItem) {
     return $q(function(resolve, reject) {
-      $http.post(`${FirebaseUrl}/items.json`, ////////this posts to FB database///////////
+      $http.post(`${FirebaseUrl}/items.json`), ////////this posts to FB database///////////
         JSON.stringify(newItem)  ////just turns the JSON into a sting
       .success(function(ObjFromFirebase) {
         resolve(ObjFromFirebase)    ////////this posts to FB database bc it is resolved now/

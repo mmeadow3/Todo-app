@@ -1,11 +1,11 @@
 "use strict";
 
-app.controller("ItemViewCtrl", function($scope, ItemStorage, $routeParams, FirebaseUrl, $q, $http) {
+app.controller("ItemViewCtrl", function($scope, ItemStorage, $routeParams, FirebaseUrl, $q, $http, $location) {
   $scope.items = [];
   // $scope.selectedItem = {};
 
 $scope.assignedTo = null;
-  ItemStorage.getItemList()
+  ItemStorage.getItemList()  //////gets the items from the Factory and populates DOM
   .then(function(itemCollection) {
     $scope.items = itemCollection;
     $scope.selectedItem = $scope.items.filter(function(item) {
@@ -17,10 +17,8 @@ $scope.assignedTo = null;
     })[0];
   });
   $scope.edit = function(thingy){
-    $scope.edited = true;
-
-
-  }
+    $scope.edited = true;  /////this is referring to ng-show in item-details.html
+}
 
 ///////////////Save button/////////
   $scope.save = function() {
@@ -46,6 +44,9 @@ $scope.assignedTo = null;
       })
       .error(function(error) {
         reject(error);
+      })
+      .then(function(){  /////always put redirects after the competed promise
+        $location.url('/items/list');
       })
     });
   };

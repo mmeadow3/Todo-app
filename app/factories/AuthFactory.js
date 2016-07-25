@@ -6,10 +6,11 @@ app.factory("AuthFactory", function(){
   let provider = new firebase.auth.GoogleAuthProvider();
   console.log("provider", provider);
 
+///////////checks to see if anything changes with the auth status///////
   firebase.auth().onAuthStateChanged(function(user){
     if (user){
       console.log("user has logged in", user.uid);
-    } else {
+      } else {
       console.log("user is not logged in");
     }
   });

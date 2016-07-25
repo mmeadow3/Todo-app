@@ -9,7 +9,7 @@ app.config(function($routeProvider, FBCreds) {
   ///////FIREBASE////////////////
   let authConfig = {
     apiKey: FBCreds.apiKey,
-    authDomain: FBCreds.authDomain
+    authDomain: FBCreds.authDomain  ////calling from values/FBCreds.js
   };
 firebase.initializeApp(authConfig); ////////This is a predefined FB function
 ///////FIREBASE////////////////
@@ -29,7 +29,7 @@ firebase.initializeApp(authConfig); ////////This is a predefined FB function
   }).
   when('/items/register', {
     templateUrl: 'partials/register.html',
-    controller: 'NavCtrl'  //////////dont add .js after controller 
+    controller: 'NavCtrl'  //////////dont add .js after controller
   }).
   otherwise('/items/list');
 });

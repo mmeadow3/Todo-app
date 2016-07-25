@@ -9,9 +9,9 @@ app.controller("ItemListCtrl", function($scope, ItemStorage){ //////ItemStorage.
 }
 getItems();
 
-    $scope.deleteItem = function(thingy) {
+    $scope.deleteItem = function(thingy) {  ///this is described in ItemFactory////
       console.log(thingy);
-      ItemStorage.deleteItem(thingy)
+      ItemStorage.deleteItem(thingy) ///this is deleting from FB database
       .then(function(){
         getItems();
       })
